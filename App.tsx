@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { UserSettings, Domain, CurriculumSubject, SideSkillCourse, DailyExpense, ExamStatus, CoachMessage, GoalItem, ThemeVibe } from "./types";
-import VibeContainer from "./components/VibeContainer";
-import AuthScreen from "./components/AuthScreen";
-import HomeOverview from "./components/HomeOverview";
-import SideSkillModule from "./components/SideSkillModule";
-import AcademicModule from "./components/AcademicModule";
-import FinanceModule from "./components/FinanceModule";
-import CoachModule from "./components/CoachModule";
-import SettingsModule from "./components/SettingsModule";
+import VibeContainer from "./VibeContainer";
+import AuthScreen from "./AuthScreen";
+import HomeOverview from "./HomeOverview";
+import SideSkillModule from "./SideSkillModule";
+import AcademicModule from "./AcademicModule";
+import FinanceModule from "./FinanceModule";
+import CoachModule from "./CoachModule";
+import SettingsModule from "./SettingsModule";
 import { ClipboardList, Flame, UserCheck, ShieldAlert, CheckSquare, Plus, Trash } from "lucide-react";
 
 // Initializing beautiful offline-first default states for first-time builders
