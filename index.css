@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-mono: "JetBrains Mono", monospace;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-classic: "Cinzel", serif;
+}
+
+/* Base customized transitions and global properties */
+* {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Elegant scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.2);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.45);
+}
+
+/* Distraction-free ambient animations */
+@keyframes breathingPulse {
+  0%, 100% { transform: scale(1); opacity: 0.85; }
+  50% { transform: scale(1.025); opacity: 1; }
+}
+
+.breathe-anim {
+  animation: breathingPulse 8s ease-in-out infinite;
+}
+
+/* Neon flicker for Cyberpunk Monk theme */
+@keyframes neonFlicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    text-shadow: 0 0 4px rgba(236,72,153,0.6), 0 0 10px rgba(236,72,153,0.3);
+  }
+  20%, 24%, 55% {
+    text-shadow: none;
+  }
+}
+
+.neon-glow-pink {
+  animation: neonFlicker 4s infinite alternate;
+}
+
+/* ----------------- THEMES STYLES & ACCENTS OVERRIDES ----------------- */
+
+/* 1. COSMIC SLATE (Aesthetic Blue Galaxy) */
+.vibe-cosmic-slate {
+  background: radial-gradient(circle at top left, #0e1118, #050607);
+  color: #f1f5f9;
+  font-family: var(--font-sans);
+}
+.vibe-cosmic-slate .font-serif {
+  font-family: var(--font-sans);
+  letter-spacing: -0.01em;
+}
+.vibe-cosmic-slate .text-amber-400 {
+  color: #818cf8 !important; /* cosmic purple highlight override */
+}
+.vibe-cosmic-slate .text-amber-500 {
+  color: #6366f1 !important;
+}
+.vibe-cosmic-slate .bg-zinc-900 {
+  background-color: #0e121a !important;
+  border-color: #1e293b !important;
+  box-shadow: 0 4px 30px rgba(99, 102, 241, 0.05) !important;
+}
+.vibe-cosmic-slate .bg-zinc-950 {
+  background-color: #050608 !important;
+  border-color: #0f172a !important;
+}
+.vibe-cosmic-slate .border-zinc-800 {
+  border-color: #1e293b !important;
+}
+.vibe-cosmic-slate .border-zinc-850 {
+  border-color: #111827 !important;
+}
+
+/* 2. CYBERPUNK MONK (High performance neon matrix) */
+.vibe-cyberpunk-monk {
+  background: linear-gradient(135deg, #040407 0%, #0c0813 100%);
+  color: #eef2ff;
+  font-family: var(--font-display);
+}
+.vibe-cyberpunk-monk .font-serif {
+  font-family: var(--font-mono);
+  font-weight: bold;
+  letter-spacing: -0.02em;
+}
+.vibe-cyberpunk-monk .text-white {
+  color: #00f3ff !important; /* cyberpunk glowing cyan override */
+}
+.vibe-cyberpunk-monk .text-amber-400 {
+  color: #ff007f !important; /* cyberpunk hot pink highlight */
+}
+.vibe-cyberpunk-monk .text-amber-500 {
+  color: #d946ef !important;
+}
+.vibe-cyberpunk-monk .bg-zinc-900 {
+  background-color: #07060f !important;
+  border-color: rgba(236, 72, 153, 0.25) !important;
+  box-shadow: 0 0 15px rgba(236, 72, 153, 0.08) !important;
+}
+.vibe-cyberpunk-monk .bg-zinc-950 {
+  background-color: #020204 !important;
+  border-color: rgba(6, 182, 212, 0.25) !important;
+}
+.vibe-cyberpunk-monk .border-zinc-800 {
+  border-color: rgba(236, 72, 153, 0.2) !important;
+}
+.vibe-cyberpunk-monk .border-zinc-850 {
+  border-color: rgba(6, 182, 212, 0.15) !important;
+}
+.vibe-cyberpunk-monk .hover:border-zinc-700:hover {
+  border-color: #ff007f !important;
+}
+
+/* 3. DARK ACADEMIC (Aristocratic Library Wood) */
+.vibe-dark-academic {
+  background: radial-gradient(circle at 50% 50%, #15110e, #0a0705);
+  color: #fcfaf3;
+  font-family: var(--font-serif);
+}
+.vibe-dark-academic .font-serif {
+  font-family: var(--font-serif);
+}
+.vibe-dark-academic .font-mono, 
+.vibe-dark-academic .font-sans,
+.vibe-dark-academic .font-display {
+  font-family: var(--font-serif);
+}
+.vibe-dark-academic .text-white {
+  color: #eae1d4 !important;
+}
+.vibe-dark-academic .text-amber-400 {
+  color: #ca8a04 !important; /* dark academic rich gold */
+}
+.vibe-dark-academic .text-amber-500 {
+  color: #eab308 !important;
+}
+.vibe-dark-academic .bg-zinc-900 {
+  background-color: #1b1511 !important;
+  border-color: #2e241c !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4) !important;
+}
+.vibe-dark-academic .bg-zinc-950 {
+  background-color: #100d0a !important;
+  border-color: #201813 !important;
+}
+.vibe-dark-academic .border-zinc-800 {
+  border-color: #2f251d !important;
+}
+.vibe-dark-academic .border-zinc-850 {
+  border-color: #1e1712 !important;
+}
+.vibe-dark-academic .text-zinc-400 {
+  color: #a79b8e !important;
+}
+
+/* 4. ZEN MINIMALIST (Satori Off-Black Bamboo) */
+.vibe-zen-minimalist {
+  background-color: #0b0d0c;
+  color: #f5f6f3;
+  font-family: var(--font-sans);
+}
+.vibe-zen-minimalist .font-serif {
+  font-family: var(--font-sans);
+  font-weight: 300;
+  letter-spacing: -0.01em;
+}
+.vibe-zen-minimalist .text-amber-400,
+.vibe-zen-minimalist .text-amber-500 {
+  color: #52b788 !important; /* zen pale leaf green highlights */
+}
+.vibe-zen-minimalist .bg-zinc-900 {
+  background-color: #101211 !important;
+  border-color: #1d211e !important;
+  box-shadow: none !important;
+}
+.vibe-zen-minimalist .bg-zinc-950 {
+  background-color: #070808 !important;
+  border-color: #121513 !important;
+}
+.vibe-zen-minimalist .border-zinc-800 {
+  border-color: #1d211e !important;
+}
+.vibe-zen-minimalist .border-zinc-850 {
+  border-color: #141715 !important;
+}
+.vibe-zen-minimalist .text-zinc-400 {
+  color: #8fa095 !important;
+}
+
+/* 5. ALPINE FOCUS (Glacial slate and frosty sky) */
+.vibe-alpine-focus {
+  background: linear-gradient(180deg, #090e15 0%, #030508 100%);
+  color: #f3f4f6;
+  font-family: var(--font-sans);
+}
+.vibe-alpine-focus .font-serif {
+  font-family: var(--font-sans);
+  letter-spacing: -0.02em;
+}
+.vibe-alpine-focus .text-amber-400 {
+  color: #38bdf8 !important; /* Alpine frosty blue */
+}
+.vibe-alpine-focus .text-amber-500 {
+  color: #0284c7 !important;
+}
+.vibe-alpine-focus .bg-zinc-900 {
+  background-color: #0f1622 !important;
+  border-color: #1e293b !important;
+  box-shadow: 0 4px 20px rgba(56, 189, 248, 0.03) !important;
+}
+.vibe-alpine-focus .bg-zinc-950 {
+  background-color: #070a10 !important;
+  border-color: #0f172a !important;
+}
+.vibe-alpine-focus .border-zinc-800 {
+  border-color: #1e293b !important;
+}
+.vibe-alpine-focus .border-zinc-850 {
+  border-color: #0f172a !important;
+}
+.vibe-alpine-focus .text-zinc-400 {
+  color: #94a3b8 !important;
+}
+
+/* Core overlay theme for Login/Auth gate screen */
+.theme-focus-gate {
+  background: radial-gradient(circle at center, #0a0b0d, #030405);
+}

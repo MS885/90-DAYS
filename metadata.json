@@ -1,0 +1,6 @@
+{
+  "name": "Become Unrecognizable",
+  "description": "An intense, high-focus self-improvement engine to become unrecognizable in a customizable number of days. Tracks multiple domains, curricular subjects with exam dates, side skill learning, financial expenses, and includes a customizable AI Coach.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
